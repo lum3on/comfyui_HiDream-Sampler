@@ -1,14 +1,27 @@
-# Core dependencies
+      
+# Core ComfyUI/HiDream dependencies
 transformers>=4.36.0
 diffusers>=0.26.0
 torch>=2.0.0
 numpy>=1.24.0
 Pillow>=10.0.0
+safetensors>=0.4.0
+huggingface_hub>=0.17.0
 
-# For standard (BNB) models
+# For standard 4-bit (BNB) models (e.g., 'full', 'dev', 'fast')
 bitsandbytes>=0.41.0
 
-# For NF4 models
+# For NF4/GPTQ models (e.g., 'full-nf4', 'dev-nf4', 'fast-nf4')
 optimum>=1.12.0
 accelerate>=0.25.0
-auto-gptq>=0.5.0
+# --- Backend for Optimum/GPTQ ---
+# Optimum requires a backend library to run GPTQ models.
+# Install *at least one* of the following that works in your environment:
+# Option 1: auto-gptq (Common, but may have CUDA build issues)
+# auto-gptq>=0.5.0
+# Option 2: ExLlama support (Often recommended)
+# optimum[exllama] # Installs optimum + exllama requirements
+# Option 3: gptqmodel (Found necessary in some setups)
+gptqmodel>=2.0.0 # Add this based on user feedback
+
+    
