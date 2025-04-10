@@ -1,3 +1,5 @@
+### Burgstall modified to not require auto-gptq! Make sure to pip install -r requirements.txt ! ###
+
 ## Added Many improvements! ##
 - Added "use_uncensored_llm" option - this currently loads a different llama3.1-8b model that is just as censored as the first model. I will work on setting up a proper LLM replacement here, but may take a few days to get working properly. Until then this is just a "try a different LLM model" button. ** THIS IS STILL A WIP, DON'T @ ME **
 - Renamed the existing node to "HiDream Sampler"
