@@ -954,7 +954,7 @@ class HiDreamSamplerAdvanced:
                     max_sequence_length_t5=max_length_t5,
                     max_sequence_length_llama=max_length_llama,
                     # Add callback for progress bar
-                    callback_on_step_end=lambda step, timestep, latents: pbar.update(1)
+                    callback_on_step_end=lambda *args: pbar.update(1)
                 )
                 output_images = output.images
             print("Pipeline inference finished.")
