@@ -646,7 +646,7 @@ class HiDreamSampler:
                  pipe.transformer.to(target_device)
             if hasattr(pipe, 'text_encoder_4') and pipe.text_encoder_4.device.type != target_device.type: # device_map uses index, check type
                  print(f"Moving text_encoder_4 to {target_device} before inference...")
-                 pipe.text_encoder_4.to(target_device)
+                 pipe.text_encoder_4.to_empty(target_device)
             # Add checks for other encoders if the pipeline uses them
 
             print("Executing pipeline inference...")
